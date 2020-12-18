@@ -114,35 +114,35 @@ child.once('ready-to-show', () => {
 ### `new BrowserWindow([options])`
 
 * `options` Object (可选)
-  * `width` Integer (可选) - 窗口的宽度(以像素为宽度)。 默认值为 `800`
-  * `height` Integer (可选) - 窗口的高度(以像素为单位)。 默认值为 `600`
+  * `width` Integer (可选) - 窗口的宽度(以像素为宽度)。 默认值为 `800`。
+  * `height` Integer (可选) - 窗口的高度(以像素为单位)。 默认值为 `600`。
   * `x` Interger (可选) - (**必选** 如果使用了y) 窗口相对于屏幕左侧的偏移量。 默认值为将窗口居中。
   * `y` Integer (可选) - (**必选** 如果使用了x) 窗口相对于屏幕顶端的偏移量。 默认值为将窗口居中。
   * `useContentSize` Boolean (可选) - `width` 和 `height` 将设置为 web 页面的尺寸(译注: 不包含边框), 这意味着窗口的实际尺寸将包括窗口边框的大小，稍微会大一点。 默认值为 `false`.
-  * `center` Boolean (可选) - 窗口是否在屏幕居中.
-  * 整型（可选）-窗口的最小宽度。默认为0 默认值为 `0`
-  * `minHeight` Integer (optional) - Window's minimum height. 默认值为 `0`
-  * `maxWidth` Integer (optional) - Window's maximum width. Default is no limit.
-  * `maxHeight` Integer (optional) - Window's maximum height. Default is no limit.
-  * `resizable` Boolean (optional) - Whether window is resizable. 默认值为 `true`。
-  * `movable` Boolean (optional) - Whether window is movable. This is not implemented on Linux. 默认值为 `true`。
-  * `minimizable` Boolean (optional) - Whether window is minimizable. This is not implemented on Linux. 默认值为 `true`。
-  * `maximizable` Boolean (optional) - Whether window is maximizable. This is not implemented on Linux. 默认值为 `true`。
-  * `closable` Boolean (optional) - Whether window is closable. This is not implemented on Linux. 默认值为 `true`。
-  * ` focusable ` Boolean (可选) - 窗口是否可以聚焦. 默认值为 `true`。 在 Windows 中设置 `focusable: false` 也意味着设置了`skipTaskbar: true`. 在 Linux 中设置 `focusable: false` 时窗口停止与 wm 交互, 并且窗口将始终置顶。
-  * `alwaysOnTop` Boolean (optional) - Whether the window should always stay on top of other windows. 默认值为 `false`.
+  * `center` Boolean (可选) - 窗口是否在屏幕居中。
+  * `minWidth` Integer (可选) - 窗口的最小宽度。 默认值为 `0`。
+  * `minHeight` Integer (可选) - 窗口的最小高度。 默认值为 `0`。
+  * `maxWidth` Integer (可选) - 窗口的最大宽度。 默认没有限制。
+  * `maxHeight` Integer (可选) - 窗口的最大高度。 默认没有限制。
+  * `resizable` Boolean (可选) - 是否允许调整窗口尺寸。 默认值为 `true`。
+  * `movable` Boolean (可选) - 是否允许移动窗口位置，在 Linux 系统中无效。 默认值为 `true`。
+  * `minimizable` Boolean (可选) - 是否允许窗口最小化，在 Linux 系统中无效。 默认值为 `true`。
+  * `maximizable` Boolean (可选) - 是否允许窗口最大化，在 Linux 系统中无效。 默认值为 `true`。
+  * `closable` Boolean (可选) - 是否允许窗口关闭，在 Linux 系统中无效。 默认值为 `true`。
+  * `focusable` Boolean (可选) - 窗口是否可以聚焦. 默认值为 `true`。 在 Windows 中设置 `focusable: false` 也意味着设置了`skipTaskbar: true`. 在 Linux 中设置 `focusable: false` 时窗口停止与 wm 交互, 并且窗口将始终置顶。
+  * `alwaysOnTop` Boolean (可选) - 窗口是否始终位于其它窗口顶部。 默认值为 `false`.
   * ` fullscreen ` Boolean (可选) - 窗口是否全屏. 当明确设置为 `false` 时，在 macOS 上全屏的按钮将被隐藏或禁用. 默认值为 `false`.
   * ` fullscreenable ` Boolean (可选) - 窗口是否可以进入全屏状态. 在 macOS上, 最大化/缩放按钮是否可用 默认值为 `true`。
-  * `simpleFullscreen` Boolean (optional) - Use pre-Lion fullscreen on macOS. 默认值为 `false`.
-  * `skipTaskbar` Boolean (optional) - Whether to show the window in taskbar. Default is `false`.
-  * `kiosk` Boolean (optional) - Whether the window is in kiosk mode. 默认值为 `false`.
+  * `simpleFullscreen` Boolean (可选) - 是否使用 macOS 的窗口全屏功能。 默认值为 `false`。
+  * `skipTaskbar` Boolean (可选) - 是否显示窗口的任务栏。 默认值为 `false`。
+  * `kiosk` Boolean (可选) - 窗口是否为信息亭模式。 默认值为 `false`。
   * `title`String(可选) - 默认窗口标题 默认为`"Electron"`。 如果由`loadURL()`加载的HTML文件中含有标签`<title>`，此属性将被忽略。
   * `icon` ([NativeImage](native-image.md) | String) (可选) - 窗口的图标. 在 Windows 上推荐使用 `ICO` 图标来获得最佳的视觉效果, 默认使用可执行文件的图标.
-  * `show` Boolean (optional) - Whether window should be shown when created. 默认值为 `true`。
+  * `show` Boolean (可选) - 窗口是否在创建后展示。 默认值为 `true`。
   * `paintWhenInitiallyHidden`Boolean(可选) - 当`show`为`false`并且渲染器刚刚被创建时，它是否应激活。  为了让`document.visibilityState` 在`show: false`的情况下第一次加载时正确地工作，你应该把这个设置成`false`.  设置为 `false` 将会导致`ready-to-show` 事件不触发。  默认值为 `true`。
-  * `frame` Boolean (optional) - Specify `false` to create a [Frameless Window](frameless-window.md). 默认值为 `true`。
-  * `parent` BrowserWindow (optional) - Specify parent window. Default is `null`.
-  * `modal` Boolean (optional) - Whether this is a modal window. This only works when the window is a child window. 默认值为 `false`.
+  * `frame` Boolean (可选) - 当设置为 `false` 时将创建一个 [Frameless Window](frameless-window.md)。 默认值为 `true`。
+  * `parent` BrowserWindow (可选) - 指定父级窗口。 默认值为 `null`.
+  * `modal` Boolean (可选) - 是否为模态窗口，仅在作为子窗口时生效。 默认值为 `false`.
   * `acceptFirstMouse` Boolean (optional) - Whether the web view accepts a single mouse-down event that simultaneously activates the window. Default is `false`.
   * `disableAutoHideCursor` Boolean (optional) - Whether to hide cursor when typing. 默认值为 `false`.
   * `autoHideMenuBar` Boolean (optional) - Auto hide the menu bar unless the `Alt` key is pressed. 默认值为 `false`.
